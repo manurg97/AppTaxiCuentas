@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<title>TaxiCuentas</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TaxiCuentas">
+<meta name="theme-color" content="#17181A">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  :root{
+    --bg: #17181A;
+    --surface: #212327;
+    --surface-2: #2A2C31;
+    --line: #34363C;
+    --yellow: #F5B700;
+    --yellow-dim: #8a6c1c;
+    --green: #4ADE80;
+    --red: #F0665A;
+    --text: #F2F1ED;
+    --muted: #9A9A9F;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Manrope', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--sans);}
+  #app{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;position:relative;padding-bottom:78px;}
+
+  /* HEADER */
+  header{padding:calc(18px + env(safe-area-inset-top)) 18px 0 18px;}
+  .topbar{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:8px;}
+  .brand-mark{width:26px;height:26px;border-radius:6px;background:var(--yellow);display:flex;align-items:center;justify-content:center;color:#1a1a1a;font-family:var(--mono);font-weight:800;font-size:14px;}
+  .brand-name{font-weight:800;font-size:16px;letter-spacing:0.2px;}
+  .profile-pill{background:var(--surface-2);border:1px solid var(--line);color:var(--muted);font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:100px;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;}
+
+  /* METER */
+  .meter{margin:16px 18px 4px 18px;background:linear-gradient(180deg,#1E2023,#191A1D);border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px 18px;position:relative;overflow:hidden;}
+  .meter::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);}
+  .meter-label{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;display:flex;justify-content:space-between;}
+  .meter-display{font-family:var(--mono);font-weight:700;font-size:42px;color:var(--yellow);margin-top:6px;letter-spacing:0.5px;display:flex;align-items:baseline;gap:6px;}
+  .meter-display span.cents{font-size:22px;color:var(--yellow-dim);}
+  .meter-sub{display:flex;gap:18px;margin-top:10px;}
+  .meter-sub div{font-family:var(--mono);font-size:12px;color:var(--muted);}
+  .meter-sub b{color:var(--text);font-size:13px;display:block;margin-top:2px;}
+
+  /* TABS */
+  nav.tabs{display:flex;gap:6px;margin:18px 18px 0 18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px;}
+  nav.tabs button{flex:1;background:transparent;border:none;color:var(--muted);font-family:var(--sans);font-weight:700;font-size:12.5px;padding:9px 4px;border-radius:9px;cursor:pointer;transition:.15s;}
+  nav.tabs button.active{background:var(--yellow);color:#1a1a1a;}
+
+  main{flex:1;padding:16px 18px 8px 18px;}
+  .section{display:none;}
+  .section.active{display:block;animation:fade .2s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;}
+  .card h3{margin:0 0 10px 0;font-size:13px;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);font-weight:700;}
+
+  .field{margin-bottom:10px;}
+  .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-weight:600;}
+  .field input, .field select, .field textarea{width:100%;background:var(--surface-2);border:1px solid var(--line);color:var(--text);padding:10px 11px;border-radius:9px;font-family:var(--sans);font-size:14.5px;}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none;border-color:var(--yellow);}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+  .paybtns{display:flex;gap:8px;}
+  .paybtns button{flex:1;padding:9px 4px;border-radius:9px;border:1px solid var(--line);background:var(--surface-2);color:var(--muted);font-family:var(--sans);font-weight:700;font-size:12.5px;cursor:pointer;}
+  .paybtns button.sel{background:var(--yellow);color:#1a1a1a;border-color:var(--yellow);}
+
+  .btn-primary{width:100%;background:var(--yellow);color:#1a1a1a;border:none;padding:13px;border-radius:10px;font-weight:800;font-size:14.5px;cursor:pointer;margin-top:4px;}
+  .btn-primary:active{transform:scale(0.98);}
+  .btn-ghost{width:100%;background:transparent;color:var(--muted);border:1px solid var(--line);padding:11px;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;}
+
+  .list-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);}
+  .list-item:last-child{border-bottom:none;}
+  .li-left{display:flex;flex-direction:column;gap:2px;}
+  .li-amount{font-family:var(--mono);font-weight:700;font-size:15px;}
+  .li-amount.expense{color:var(--red);}
+  .li-amount.income{color:var(--green);}
+  .li-meta{font-size:11.5px;color:var(--muted);}
+  .li-tag{font-size:10.5px;color:var(--muted);background:var(--surface-2);padding:2px 7px;border-radius:100px;display:inline-block;margin-top:2px;width:fit-content;}
+  .li-del{background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer;padding:4px 6px;}
+  .empty{text-align:center;color:var(--muted);font-size:13px;padding:22px 10px;}
+
+  /* BALANCES */
+  .period-switch{display:flex;gap:6px;margin-bottom:14px;}
+  .period-switch button{flex:1;padding:8px 4px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-weight:700;font-size:12.5px;cursor:pointer;}
+  .period-switch button.active{background:var(--surface-2);color:var(--yellow);border-color:var(--yellow-dim);}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:12px;}
+  .stat .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;font-weight:700;}
+  .stat .val{font-family:var(--mono);font-weight:700;font-size:19px;margin-top:4px;}
+  .val.pos{color:var(--green);}
+  .val.neg{color:var(--red);}
+  .bars{display:flex;align-items:flex-end;gap:6px;height:110px;margin-top:6px;}
+  .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;}
+  .bar{width:100%;border-radius:4px 4px 0 0;background:var(--yellow);min-height:2px;}
+  .bar-lbl{font-size:9.5px;color:var(--muted);font-family:var(--mono);}
+
+  /* SETTINGS */
+  .toggle-row{display:flex;gap:8px;margin-bottom:14px;}
+  .toggle-row button{flex:1;padding:12px 6px;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);color:var(--muted);font-weight:800;font-size:13px;cursor:pointer;}
+  .toggle-row button.sel{background:var(--yellow);color:#1a1a1a;border-color:var(--yellow);}
+  .hint{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.4;}
+
+  footer.tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:var(--surface);border-top:1px solid var(--line);display:flex;padding:8px 10px calc(8px + env(safe-area-inset-bottom)) 10px;}
+  footer.tabbar button{flex:1;background:none;border:none;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:3px;font-family:var(--sans);font-size:10.5px;font-weight:700;cursor:pointer;padding:6px 0;}
+  footer.tabbar button.active{color:var(--yellow);}
+  footer.tabbar svg{width:20px;height:20px;}
+
+  .toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--surface-2);border:1px solid var(--yellow-dim);color:var(--text);padding:10px 16px;border-radius:10px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:50;max-width:400px;text-align:center;}
+  .toast.show{opacity:1;transform:translate(-50%,-6px);}
+
+  .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:60;}
+  .modal-bg.show{display:flex;}
+  .modal{background:var(--surface);border:1px solid var(--line);border-radius:18px 18px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom)) 18px;width:100%;max-width:480px;max-height:85vh;overflow-y:auto;}
+  .modal h2{margin:0 0 14px 0;font-size:16px;}
+
+  /* JORNADA */
+  .shift-card{border-color:var(--yellow-dim);}
+  .shift-status{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+  .shift-status .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);display:inline-block;margin-right:6px;}
+  .shift-status.open .dot{background:var(--green);box-shadow:0 0 0 3px rgba(74,222,128,.2);}
+  .shift-status span.label{font-size:12.5px;font-weight:700;color:var(--muted);}
+  .shift-status.open span.label{color:var(--green);}
+  .shift-info{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:10px;}
+
+  /* DAY NAV */
+  .day-nav{display:none;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 6px;margin-bottom:12px;}
+  .day-nav.show{display:flex;}
+  .day-nav button{background:var(--surface-2);border:1px solid var(--line);color:var(--text);width:32px;height:32px;border-radius:8px;font-size:16px;cursor:pointer;}
+  .day-nav button:disabled{opacity:.35;cursor:default;}
+  .day-nav .day-label{font-weight:700;font-size:13.5px;text-transform:capitalize;}
+
+  /* HISTORIAL */
+  .hist-list{}
+  .hist-item{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer;}
+  .hist-month-header{font-family:var(--mono);font-size:11px;font-weight:800;color:var(--yellow);text-transform:uppercase;letter-spacing:0.6px;padding:12px 0 4px 0;}
+  .hist-month-header:first-child{padding-top:2px;}
+  .hist-item:last-child{border-bottom:none;}
+  .hist-item:active{opacity:.7;}
+  .hist-date{font-size:13px;font-weight:600;text-transform:capitalize;}
+  .hist-km{font-size:11px;color:var(--muted);font-family:var(--mono);}
+  .hist-net{font-family:var(--mono);font-weight:700;font-size:14px;}
+
+  .btn-export{width:100%;background:var(--surface-2);border:1px solid var(--green);color:var(--green);padding:12px;border-radius:10px;font-weight:800;font-size:13.5px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;}
+  .btn-export svg{width:16px;height:16px;}
+
+  /* MONTH MODAL */
+  .month-year-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:16px;}
+  .month-year-nav button{background:var(--surface-2);border:1px solid var(--line);color:var(--text);width:34px;height:34px;border-radius:8px;font-size:17px;cursor:pointer;}
+  .month-year-nav button:disabled{opacity:.3;cursor:default;}
+  .month-year-nav .yr{font-family:var(--mono);font-weight:800;font-size:17px;min-width:64px;text-align:center;}
+  .yr-select{font-family:var(--mono);font-weight:800;font-size:17px;text-align:center;background:var(--surface-2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;}
+  .month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .month-grid button{padding:12px 4px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--text);font-weight:700;font-size:13px;cursor:pointer;text-transform:capitalize;}
+  .month-grid button.sel{background:var(--yellow);color:#1a1a1a;border-color:var(--yellow);}
+  .month-grid button:disabled{opacity:.3;cursor:default;}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">€</div>
+        <div class="brand-name">TaxiCuentas</div>
+      </div>
+      <button class="profile-pill" id="profilePill" onclick="openSettings()">DUEÑO</button>
+    </div>
+  </header>
+
+  <div class="meter">
+    <div class="meter-label"><span>NETO DE HOY</span><span id="meterDate"></span></div>
+    <div class="meter-display">€<span id="meterMain">0</span><span class="cents" id="meterCents">,00</span></div>
+    <div class="meter-sub">
+      <div>CARRERAS<b id="meterTrips">0</b></div>
+      <div>PROPINAS<b id="meterTips">0,00 €</b></div>
+      <div>GASTOS<b id="meterExp">0,00 €</b></div>
+    </div>
+  </div>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="carreras" onclick="switchTab('carreras')">Carreras</button>
+    <button class="tab-btn" data-tab="gastos" onclick="switchTab('gastos')">Gastos</button>
+    <button class="tab-btn" data-tab="balances" onclick="switchTab('balances')">Balances</button>
+  </nav>
+
+  <main>
+
+    <!-- CARRERAS -->
+    <section class="section active" id="sec-carreras">
+      <div class="card shift-card" id="shiftCard">
+        <h3>Jornada</h3>
+        <div class="shift-status" id="shiftStatus"><span><span class="dot"></span><span class="label">Sin turno abierto</span></span></div>
+        <div class="shift-info" id="shiftInfo"></div>
+        <div id="shiftFormArea"></div>
+      </div>
+      <div class="card" id="closedNotice" style="display:block;">
+        <div class="empty" style="padding:10px 4px;">🔒 El día está cerrado. Abre el día arriba para poder apuntar carreras.</div>
+      </div>
+      <div class="card" id="tripFormCard" style="display:none;">
+        <h3>Nueva carrera</h3>
+        <div class="row2">
+          <div class="field"><label>Importe (€)</label><input type="number" inputmode="decimal" step="0.01" id="tripAmount" placeholder="0,00"></div>
+          <div class="field"><label>Propina (€)</label><input type="number" inputmode="decimal" step="0.01" id="tripTip" placeholder="0,00"></div>
+        </div>
+        <div class="field">
+          <label>Forma de pago</label>
+          <div class="paybtns" id="payButtons">
+            <button class="sel" data-val="efectivo" onclick="selectPay(this)">Efectivo</button>
+            <button data-val="tarjeta" onclick="selectPay(this)">Tarjeta</button>
+            <button data-val="app" onclick="selectPay(this)">App</button>
+          </div>
+        </div>
+        <div class="field"><label>Nota (opcional)</label><input type="text" id="tripNote" placeholder="Aeropuerto, zona..."></div>
+        <button class="btn-primary" onclick="addTrip()">Apuntar carrera</button>
+      </div>
+      <div class="card">
+        <h3>Carreras de hoy</h3>
+        <div id="tripsList"></div>
+      </div>
+    </section>
+
+    <!-- GASTOS -->
+    <section class="section" id="sec-gastos">
+      <div class="card">
+        <h3>Nuevo gasto</h3>
+        <div class="row2">
+          <div class="field"><label>Importe (€)</label><input type="number" inputmode="decimal" step="0.01" id="expAmount" placeholder="0,00"></div>
+          <div class="field">
+            <label>Categoría</label>
+            <select id="expCategory">
+              <option value="combustible">Combustible</option>
+              <option value="mantenimiento">Mantenimiento</option>
+              <option value="seguro">Seguro</option>
+              <option value="lavado">Lavado</option>
+              <option value="itv">ITV</option>
+              <option value="multas">Multas</option>
+              <option value="licencia">Cuota licencia/emisora</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Tipo de gasto</label>
+          <div class="paybtns" id="expScopeButtons">
+            <button class="sel" data-val="diario" onclick="selectExpScope(this)">Diario</button>
+            <button data-val="mensual" onclick="selectExpScope(this)">Mensual (cuota fija)</button>
+          </div>
+          <div class="hint" id="expScopeHint">Se resta del balance de hoy, la semana, el mes y el año.</div>
+        </div>
+        <div class="field"><label>Nota (opcional)</label><input type="text" id="expNote" placeholder="Detalle del gasto"></div>
+        <button class="btn-primary" onclick="addExpense()">Apuntar gasto</button>
+      </div>
+      <div class="card">
+        <h3>Gastos de hoy</h3>
+        <div id="expList"></div>
+      </div>
+    </section>
+
+    <!-- BALANCES -->
+    <section class="section" id="sec-balances">
+      <div class="period-switch">
+        <button data-p="day" onclick="switchPeriod('day')">Día</button>
+        <button class="active" data-p="week" onclick="switchPeriod('week')">Semana</button>
+        <button data-p="month" onclick="switchPeriod('month')">Mes</button>
+        <button data-p="year" onclick="switchPeriod('year')">Año</button>
+      </div>
+      <div class="day-nav show" id="dayNav">
+        <button onclick="periodStep(-1)">‹</button>
+        <span class="day-label" id="dayNavLabel"></span>
+        <button onclick="periodStep(1)" id="dayNextBtn">›</button>
+      </div>
+      <div class="row2" id="pickerRow" style="margin-top:-6px;margin-bottom:12px;">
+        <div class="field" id="dayPickerField" style="display:none;margin-bottom:0;">
+          <input type="date" id="dayPicker" onchange="selectDay(this.value)">
+        </div>
+        <div class="field" id="weekPickerField" style="display:none;margin-bottom:0;">
+          <input type="date" id="weekPicker" onchange="selectWeekInput(this.value)">
+        </div>
+        <div class="field" id="monthPickerField" style="display:none;margin-bottom:0;">
+          <button type="button" class="btn-ghost" id="monthPickerBtn" style="width:100%;text-align:left;" onclick="openMonthModal()">Elegir mes</button>
+        </div>
+        <div class="field" id="yearPickerField" style="display:none;margin-bottom:0;">
+          <select id="yearPicker" onchange="selectYearInput(this.value)"></select>
+        </div>
+        <button class="btn-ghost" id="todayResetBtn" style="display:none;" onclick="resetPeriodToToday()">Ir a hoy</button>
+      </div>
+      <div class="stat-grid">
+        <div class="stat"><div class="lbl">Ingresos</div><div class="val pos" id="statIncome">0,00 €</div></div>
+        <div class="stat"><div class="lbl">Gastos</div><div class="val neg" id="statExpense">0,00 €</div></div>
+        <div class="stat"><div class="lbl">Neto</div><div class="val" id="statNet">0,00 €</div></div>
+        <div class="stat"><div class="lbl">Propinas</div><div class="val pos" id="statTips">0,00 €</div></div>
+        <div class="stat"><div class="lbl">Km recorridos</div><div class="val" id="statKm">0</div></div>
+        <div class="stat"><div class="lbl">€ / km</div><div class="val" id="statPerKm">0,00 €</div></div>
+        <div class="stat"><div class="lbl">Horas trabajadas</div><div class="val" id="statHours">0h</div></div>
+        <div class="stat"><div class="lbl">€ / hora</div><div class="val" id="statPerHour">0,00 €</div></div>
+      </div>
+      <button class="btn-export" onclick="exportExcel()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+        Exportar periodo a Excel
+      </button>
+      <div class="card" id="dayDetailTrips" style="display:none;">
+        <h3>Carreras de ese día</h3>
+        <div id="dayTripsList"></div>
+      </div>
+      <div class="card" id="dayDetailExp" style="display:none;">
+        <h3>Gastos de ese día</h3>
+        <div id="dayExpList"></div>
+      </div>
+      <div class="card" id="barsCard" style="margin-top:12px;">
+        <h3>Evolución neta</h3>
+        <div class="bars" id="chartBars"></div>
+      </div>
+      <div class="card">
+        <h3>Ingresos por forma de pago</h3>
+        <div id="payBreakdown"></div>
+      </div>
+      <div class="card" id="expenseBreakdownCard">
+        <h3>Gastos por categoría</h3>
+        <div id="expBreakdown"></div>
+      </div>
+      <div class="card">
+        <h3>Historial por días</h3>
+        <div class="hist-list" id="dayHistory"></div>
+        <button class="btn-ghost" id="showMoreHistoryBtn" style="margin-top:10px;display:none;" onclick="showMoreHistory()">Mostrar 7 días más</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="tabbar">
+    <button class="active" data-tab="carreras" onclick="switchTab('carreras')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      Carreras
+    </button>
+    <button data-tab="gastos" onclick="switchTab('gastos')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      Gastos
+    </button>
+    <button data-tab="balances" onclick="switchTab('balances')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
+      Balances
+    </button>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal-bg" id="settingsModal">
+  <div class="modal">
+    <h2>Perfil y ajustes</h2>
+    <div class="toggle-row">
+      <button id="btnDueno" class="sel" onclick="setProfile('dueno')">Dueño de licencia</button>
+      <button id="btnAsalariado" onclick="setProfile('asalariado')">Asalariado</button>
+    </div>
+    <div id="settingsHint" class="hint"></div>
+    <div id="salaryFields" style="display:none;margin-top:12px;">
+      <div class="field"><label>% que te corresponde de lo facturado</label><input type="number" id="salaryPct" placeholder="Ej: 40"></div>
+      <div class="hint">Con esto calculamos tu liquidación estimada aparte del neto total del vehículo.</div>
+    </div>
+    <button class="btn-ghost" style="margin-top:16px;" onclick="closeSettings()">Cerrar</button>
+  </div>
+</div>
+
+<div class="modal-bg" id="editModal">
+  <div class="modal">
+    <h2 id="editModalTitle">Editar</h2>
+    <div id="editModalBody"></div>
+    <div class="row2" style="margin-top:6px;">
+      <button class="btn-ghost" onclick="closeEditModal()">Cancelar</button>
+      <button class="btn-primary" style="margin-top:0;" onclick="saveEdit()">Guardar cambios</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-bg" id="monthModal">
+  <div class="modal">
+    <h2>Elegir mes</h2>
+    <div class="month-year-nav">
+      <button onclick="monthModalYearStep(-1)">‹</button>
+      <select class="yr-select" id="monthModalYear" onchange="monthModalYearJump(this.value)"></select>
+      <button onclick="monthModalYearStep(1)" id="monthModalYearNext">›</button>
+    </div>
+    <div class="month-grid" id="monthModalGrid"></div>
+    <button class="btn-ghost" style="margin-top:16px;" onclick="closeMonthModal()">Cerrar</button>
+  </div>
+</div>
+
+<div class="modal-bg" id="confirmModal">
+  <div class="modal">
+    <h2>Confirmar</h2>
+    <div id="confirmModalMsg" class="hint" style="font-size:14.5px;color:var(--text);margin-bottom:18px;"></div>
+    <div class="row2">
+      <button class="btn-ghost" onclick="closeConfirmModal()">Cancelar</button>
+      <button class="btn-primary" style="margin-top:0;background:var(--red);" onclick="runConfirmedAction()">Borrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let trips = [];
+let expenses = [];
+let shifts = [];
+let profile = { type: 'dueno', salaryPct: 40 };
+let currentPay = 'efectivo';
+let currentExpScope = 'diario';
+let currentPeriod = 'week';
+
+const fmt = (n) => (Math.round((n||0)*100)/100).toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' €';
+const fmtKm = (n) => (Math.round((n||0)*10)/10).toLocaleString('es-ES') + ' km';
+const todayStr = () => new Date().toISOString().slice(0,10);
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+function activeDate(){
+  const open = shifts.find(s=>!s.endTs);
+  return open ? open.date : todayStr();
+}
+let selectedDate = todayStr();
+let weekOffset = 0;
+let monthOffset = 0;
+let yearOffset = 0;
+let historyVisibleCount = 7;
+
+async function loadData(){
+  try{
+    const t = await window.storage.get('trips');
+    trips = t ? JSON.parse(t.value) : [];
+  }catch(e){ trips = []; }
+  try{
+    const e = await window.storage.get('expenses');
+    expenses = e ? JSON.parse(e.value) : [];
+  }catch(e){ expenses = []; }
+  try{
+    const p = await window.storage.get('profile');
+    profile = p ? JSON.parse(p.value) : { type:'dueno', salaryPct:40 };
+  }catch(e){ profile = { type:'dueno', salaryPct:40 }; }
+  try{
+    const s = await window.storage.get('shifts');
+    shifts = s ? JSON.parse(s.value) : [];
+  }catch(e){ shifts = []; }
+  applyProfileUI();
+  updatePickerVisibility();
+  initPickerLimits();
+  renderAll();
+}
+
+async function saveTrips(){ try{ await window.storage.set('trips', JSON.stringify(trips)); }catch(e){ showToast('No se pudo guardar'); } }
+async function saveExpenses(){ try{ await window.storage.set('expenses', JSON.stringify(expenses)); }catch(e){ showToast('No se pudo guardar'); } }
+async function saveProfile(){ try{ await window.storage.set('profile', JSON.stringify(profile)); }catch(e){ showToast('No se pudo guardar'); } }
+async function saveShifts(){ try{ await window.storage.set('shifts', JSON.stringify(shifts)); }catch(e){ showToast('No se pudo guardar'); } }
+
+function showToast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'), 1600);
+}
+
+function switchTab(tab){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('sec-'+tab).classList.add('active');
+  document.querySelectorAll('nav.tabs .tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
+  document.querySelectorAll('footer.tabbar button').forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
+  if(tab==='balances') renderBalances();
+}
+
+function selectPay(btn){
+  document.querySelectorAll('#payButtons button').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+  currentPay = btn.dataset.val;
+}
+
+function selectExpScope(btn){
+  document.querySelectorAll('#expScopeButtons button').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+  currentExpScope = btn.dataset.val;
+  document.getElementById('expScopeHint').textContent = currentExpScope==='mensual'
+    ? 'No se resta del neto de hoy ni de la semana. Sí se resta del balance del mes y del año.'
+    : 'Se resta del balance de hoy, la semana, el mes y el año.';
+}
+
+async function addTrip(){
+  if(!findOpenShift()){ showToast('Abre el día antes de apuntar carreras'); return; }
+  const amount = parseFloat(document.getElementById('tripAmount').value);
+  const tip = parseFloat(document.getElementById('tripTip').value) || 0;
+  if(!amount || amount<=0){ showToast('Pon el importe de la carrera'); return; }
+  const note = document.getElementById('tripNote').value.trim();
+  trips.push({ id: uid(), date: activeDate(), ts: Date.now(), amount, tip, pay: currentPay, note });
+  await saveTrips();
+  document.getElementById('tripAmount').value='';
+  document.getElementById('tripTip').value='';
+  document.getElementById('tripNote').value='';
+  showToast('Carrera apuntada');
+  renderAll();
+}
+
+let confirmedActionFn = null;
+
+function showConfirmModal(msg, actionFn){
+  document.getElementById('confirmModalMsg').textContent = msg;
+  confirmedActionFn = actionFn;
+  document.getElementById('confirmModal').classList.add('show');
+}
+function closeConfirmModal(){
+  document.getElementById('confirmModal').classList.remove('show');
+  confirmedActionFn = null;
+}
+async function runConfirmedAction(){
+  const fn = confirmedActionFn;
+  closeConfirmModal();
+  if(fn) await fn();
+}
+
+function deleteTrip(id){
+  const t = trips.find(x=>x.id===id);
+  if(!t) return;
+  showConfirmModal(`¿Seguro que quieres borrar esta carrera de ${fmt(t.amount)}${t.tip>0 ? ' + '+fmt(t.tip)+' propina' : ''}?`, async ()=>{
+    trips = trips.filter(x=>x.id!==id);
+    await saveTrips();
+    showToast('Carrera borrada');
+    renderAll();
+  });
+}
+
+async function addExpense(){
+  const amount = parseFloat(document.getElementById('expAmount').value);
+  if(!amount || amount<=0){ showToast('Pon el importe del gasto'); return; }
+  const category = document.getElementById('expCategory').value;
+  const note = document.getElementById('expNote').value.trim();
+  expenses.push({ id: uid(), date: activeDate(), ts: Date.now(), amount, category, note, scope: currentExpScope });
+  await saveExpenses();
+  document.getElementById('expAmount').value='';
+  document.getElementById('expNote').value='';
+  showToast('Gasto apuntado');
+  renderAll();
+}
+
+function deleteExpense(id){
+  const e = expenses.find(x=>x.id===id);
+  if(!e) return;
+  showConfirmModal(`¿Seguro que quieres borrar este gasto de ${CAT_LABELS[e.category]} (${fmt(e.amount)})?`, async ()=>{
+    expenses = expenses.filter(x=>x.id!==id);
+    await saveExpenses();
+    showToast('Gasto borrado');
+    renderAll();
+  });
+}
+
+
+const CAT_LABELS = { combustible:'Combustible', mantenimiento:'Mantenimiento', seguro:'Seguro', lavado:'Lavado', itv:'ITV', multas:'Multas', licencia:'Licencia/Emisora', otros:'Otros' };
+const PAY_LABELS = { efectivo:'Efectivo', tarjeta:'Tarjeta', app:'App' };
+
+let editingId = null;
+let editingType = null;
+
+function openEditModal(){ document.getElementById('editModal').classList.add('show'); }
+function closeEditModal(){ document.getElementById('editModal').classList.remove('show'); editingId=null; editingType=null; }
+
+function editTrip(id){
+  const t = trips.find(x=>x.id===id);
+  if(!t) return;
+  editingId = id; editingType = 'trip';
+  document.getElementById('editModalTitle').textContent = 'Editar carrera';
+  document.getElementById('editModalBody').innerHTML = `
+    <div class="row2">
+      <div class="field"><label>Importe (€)</label><input type="number" inputmode="decimal" step="0.01" id="editTripAmount" value="${t.amount}"></div>
+      <div class="field"><label>Propina (€)</label><input type="number" inputmode="decimal" step="0.01" id="editTripTip" value="${t.tip}"></div>
+    </div>
+    <div class="field">
+      <label>Forma de pago</label>
+      <div class="paybtns" id="editPayButtons">
+        <button data-val="efectivo" class="${t.pay==='efectivo'?'sel':''}" onclick="selectEditPay(this)">Efectivo</button>
+        <button data-val="tarjeta" class="${t.pay==='tarjeta'?'sel':''}" onclick="selectEditPay(this)">Tarjeta</button>
+        <button data-val="app" class="${t.pay==='app'?'sel':''}" onclick="selectEditPay(this)">App</button>
+      </div>
+    </div>
+    <div class="field"><label>Fecha</label><input type="date" id="editTripDate" value="${t.date}"></div>
+    <div class="field"><label>Nota</label><input type="text" id="editTripNote" value="${escapeHtml(t.note||'')}"></div>
+  `;
+  openEditModal();
+}
+
+function selectEditPay(btn){
+  document.querySelectorAll('#editPayButtons button').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
+function editExpense(id){
+  const e = expenses.find(x=>x.id===id);
+  if(!e) return;
+  editingId = id; editingType = 'expense';
+  const catOptions = Object.keys(CAT_LABELS).map(k=>`<option value="${k}" ${e.category===k?'selected':''}>${CAT_LABELS[k]}</option>`).join('');
+  document.getElementById('editModalTitle').textContent = 'Editar gasto';
+  document.getElementById('editModalBody').innerHTML = `
+    <div class="row2">
+      <div class="field"><label>Importe (€)</label><input type="number" inputmode="decimal" step="0.01" id="editExpAmount" value="${e.amount}"></div>
+      <div class="field"><label>Categoría</label><select id="editExpCategory">${catOptions}</select></div>
+    </div>
+    <div class="field">
+      <label>Tipo de gasto</label>
+      <div class="paybtns" id="editExpScopeButtons">
+        <button data-val="diario" class="${e.scope!=='mensual'?'sel':''}" onclick="selectEditExpScope(this)">Diario</button>
+        <button data-val="mensual" class="${e.scope==='mensual'?'sel':''}" onclick="selectEditExpScope(this)">Mensual</button>
+      </div>
+    </div>
+    <div class="field"><label>Fecha</label><input type="date" id="editExpDate" value="${e.date}"></div>
+    <div class="field"><label>Nota</label><input type="text" id="editExpNote" value="${escapeHtml(e.note||'')}"></div>
+  `;
+  openEditModal();
+}
+
+function selectEditExpScope(btn){
+  document.querySelectorAll('#editExpScopeButtons button').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
+async function saveEdit(){
+  if(editingType==='trip'){
+    const t = trips.find(x=>x.id===editingId);
+    if(!t) return;
+    const amount = parseFloat(document.getElementById('editTripAmount').value);
+    if(!amount || amount<=0){ showToast('Pon un importe válido'); return; }
+    t.amount = amount;
+    t.tip = parseFloat(document.getElementById('editTripTip').value) || 0;
+    t.pay = document.querySelector('#editPayButtons button.sel').dataset.val;
+    t.date = document.getElementById('editTripDate').value || t.date;
+    t.note = document.getElementById('editTripNote').value.trim();
+    await saveTrips();
+  } else if(editingType==='expense'){
+    const e = expenses.find(x=>x.id===editingId);
+    if(!e) return;
+    const amount = parseFloat(document.getElementById('editExpAmount').value);
+    if(!amount || amount<=0){ showToast('Pon un importe válido'); return; }
+    e.amount = amount;
+    e.category = document.getElementById('editExpCategory').value;
+    e.scope = document.querySelector('#editExpScopeButtons button.sel').dataset.val;
+    e.date = document.getElementById('editExpDate').value || e.date;
+    e.note = document.getElementById('editExpNote').value.trim();
+    await saveExpenses();
+  }
+  showToast('Cambios guardados');
+  closeEditModal();
+  renderAll();
+}
+
+function renderAll(){
+  renderMeter();
+  renderTripsList();
+  renderExpList();
+  renderJornada();
+  renderBalances();
+}
+
+function findOpenShift(){ return shifts.find(s=>!s.endTs); }
+
+function fmtDuration(ms){
+  const totalMin = Math.floor(ms/60000);
+  const h = Math.floor(totalMin/60);
+  const m = totalMin%60;
+  return h>0 ? `${h}h ${m}m` : `${m}m`;
+}
+
+function renderJornada(){
+  const open = findOpenShift();
+  const statusEl = document.getElementById('shiftStatus');
+  const infoEl = document.getElementById('shiftInfo');
+  const formEl = document.getElementById('shiftFormArea');
+  document.getElementById('tripFormCard').style.display = open ? 'block' : 'none';
+  document.getElementById('closedNotice').style.display = open ? 'none' : 'block';
+  if(open){
+    statusEl.className = 'shift-status open';
+    statusEl.innerHTML = '<span><span class="dot"></span><span class="label">Turno abierto</span></span>';
+    const start = new Date(open.startTs);
+    infoEl.innerHTML = `Inicio: ${start.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'})} · Km inicial: ${open.kmStart} · <span id="shiftElapsed">${fmtDuration(Date.now()-open.startTs)}</span>`;
+    formEl.innerHTML = `
+      <div class="field"><label>Km actual (al cerrar el día)</label><input type="number" inputmode="decimal" id="kmEndInput" placeholder="Ej: ${open.kmStart+80}"></div>
+      <button class="btn-primary" onclick="closeShift()">Cerrar día</button>
+    `;
+  } else {
+    statusEl.className = 'shift-status';
+    statusEl.innerHTML = '<span><span class="dot"></span><span class="label">Sin turno abierto</span></span>';
+    infoEl.textContent = '';
+    formEl.innerHTML = `
+      <div class="field"><label>Km de inicio (cuentakilómetros)</label><input type="number" inputmode="decimal" id="kmStartInput" placeholder="Ej: 84210"></div>
+      <button class="btn-primary" onclick="openShift()">Abrir día</button>
+    `;
+  }
+}
+
+function updateShiftElapsed(){
+  const open = findOpenShift();
+  const el = document.getElementById('shiftElapsed');
+  if(open && el){ el.textContent = fmtDuration(Date.now()-open.startTs); }
+}
+
+async function openShift(){
+  const kmStart = parseFloat(document.getElementById('kmStartInput').value);
+  if(kmStart===undefined || kmStart===null || isNaN(kmStart) || kmStart<0){ showToast('Pon el km de inicio'); return; }
+  shifts.push({ id: uid(), date: todayStr(), startTs: Date.now(), endTs: null, kmStart, kmEnd: null, kmTotal: 0 });
+  await saveShifts();
+  showToast('Día abierto');
+  renderJornada();
+  renderBalances();
+  const formCard = document.getElementById('tripFormCard');
+  if(formCard) formCard.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+async function closeShift(){
+  const open = findOpenShift();
+  if(!open) return;
+  const kmEnd = parseFloat(document.getElementById('kmEndInput').value);
+  if(kmEnd===undefined || kmEnd===null || isNaN(kmEnd) || kmEnd < open.kmStart){ showToast('Revisa el km final (debe ser mayor que el inicial)'); return; }
+  open.endTs = Date.now();
+  open.kmEnd = kmEnd;
+  open.kmTotal = Math.round((kmEnd - open.kmStart)*10)/10;
+  await saveShifts();
+  showToast('Día cerrado · ' + fmtKm(open.kmTotal));
+  renderJornada();
+  renderBalances();
+}
+
+function renderMeter(){
+  const today = activeDate();
+  const todayTrips = trips.filter(t=>t.date===today);
+  const todayExp = expenses.filter(e=>e.date===today && e.scope!=='mensual');
+  const income = todayTrips.reduce((s,t)=>s+t.amount,0);
+  const tips = todayTrips.reduce((s,t)=>s+t.tip,0);
+  const exp = todayExp.reduce((s,e)=>s+e.amount,0);
+  const net = income + tips - exp;
+  const [intPart, decPart] = fmt(net).replace(' €','').split(',');
+  document.getElementById('meterMain').textContent = intPart;
+  document.getElementById('meterCents').textContent = ','+decPart;
+  document.getElementById('meterTrips').textContent = todayTrips.length;
+  document.getElementById('meterTips').textContent = fmt(tips);
+  document.getElementById('meterExp').textContent = fmt(exp);
+  const dateLabel = new Date(today).toLocaleDateString('es-ES',{weekday:'short', day:'numeric', month:'short'});
+  document.getElementById('meterDate').textContent = today===todayStr() ? dateLabel : dateLabel + ' · turno nocturno';
+}
+
+function tripItemHTML(t){
+  return `
+    <div class="list-item">
+      <div class="li-left">
+        <span>${fmt(t.amount)}${t.tip>0 ? ' + '+fmt(t.tip)+' propina':''}</span>
+        <span class="li-tag">${PAY_LABELS[t.pay]}${t.note ? ' · '+escapeHtml(t.note) : ''}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span class="li-amount income">${fmt(t.amount+t.tip)}</span>
+        <button class="li-del" onclick="editTrip('${t.id}')">✎</button>
+        <button class="li-del" onclick="deleteTrip('${t.id}')">✕</button>
+      </div>
+    </div>
+  `;
+}
+
+function expItemHTML(e){
+  return `
+    <div class="list-item">
+      <div class="li-left">
+        <span class="li-tag">${CAT_LABELS[e.category]}${e.scope==='mensual' ? ' · Mensual' : ''}</span>
+        <span class="li-meta">${escapeHtml(e.note||'')}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span class="li-amount expense">-${fmt(e.amount)}</span>
+        <button class="li-del" onclick="editExpense('${e.id}')">✎</button>
+        <button class="li-del" onclick="deleteExpense('${e.id}')">✕</button>
+      </div>
+    </div>
+  `;
+}
+
+function renderTripsList(){
+  const el = document.getElementById('tripsList');
+  const today = activeDate();
+  const list = trips.filter(t=>t.date===today).sort((a,b)=>b.ts-a.ts);
+  if(list.length===0){ el.innerHTML = '<div class="empty">Aún no has apuntado carreras hoy</div>'; return; }
+  el.innerHTML = list.map(tripItemHTML).join('');
+}
+
+function renderExpList(){
+  const el = document.getElementById('expList');
+  const today = activeDate();
+  const list = expenses.filter(e=>e.date===today).sort((a,b)=>b.ts-a.ts);
+  if(list.length===0){ el.innerHTML = '<div class="empty">Aún no has apuntado gastos hoy</div>'; return; }
+  el.innerHTML = list.map(expItemHTML).join('');
+}
+
+function escapeHtml(s){ return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function switchPeriod(p){
+  currentPeriod = p;
+  if(p==='day') selectedDate = activeDate();
+  document.querySelectorAll('.period-switch button').forEach(b=>b.classList.toggle('active', b.dataset.p===p));
+  document.getElementById('barsCard').style.display = p==='day' ? 'none' : 'block';
+  updatePickerVisibility();
+  renderBalances();
+}
+
+function updatePickerVisibility(){
+  document.getElementById('dayPickerField').style.display = currentPeriod==='day' ? 'block' : 'none';
+  document.getElementById('weekPickerField').style.display = currentPeriod==='week' ? 'block' : 'none';
+  document.getElementById('monthPickerField').style.display = currentPeriod==='month' ? 'block' : 'none';
+  document.getElementById('yearPickerField').style.display = currentPeriod==='year' ? 'block' : 'none';
+}
+
+function initPickerLimits(){
+  const today = todayStr();
+  document.getElementById('dayPicker').max = today;
+  document.getElementById('weekPicker').max = today;
+  populateYearPicker();
+}
+
+function currentOffset(){
+  if(currentPeriod==='week') return weekOffset;
+  if(currentPeriod==='month') return monthOffset;
+  if(currentPeriod==='year') return yearOffset;
+  return 0;
+}
+
+function periodStep(delta){
+  if(currentPeriod==='day'){ dayStep(delta); return; }
+  if(currentPeriod==='week'){ if(weekOffset+delta>0) return; weekOffset+=delta; }
+  else if(currentPeriod==='month'){ if(monthOffset+delta>0) return; monthOffset+=delta; }
+  else if(currentPeriod==='year'){ if(yearOffset+delta>0) return; yearOffset+=delta; }
+  renderBalances();
+}
+
+function resetPeriodToToday(){
+  if(currentPeriod==='day'){ selectedDate = activeDate(); }
+  else if(currentPeriod==='week'){ weekOffset = 0; }
+  else if(currentPeriod==='month'){ monthOffset = 0; }
+  else if(currentPeriod==='year'){ yearOffset = 0; }
+  renderBalances();
+}
+
+function dayStep(delta){
+  const d = new Date(selectedDate);
+  d.setDate(d.getDate()+delta);
+  const newDate = d.toISOString().slice(0,10);
+  if(newDate > todayStr()) return;
+  selectedDate = newDate;
+  renderBalances();
+}
+
+function selectDay(dateStr){
+  if(!dateStr) return;
+  if(dateStr > todayStr()) dateStr = todayStr();
+  currentPeriod = 'day';
+  selectedDate = dateStr;
+  document.querySelectorAll('.period-switch button').forEach(b=>b.classList.toggle('active', b.dataset.p==='day'));
+  document.getElementById('barsCard').style.display = 'none';
+  updatePickerVisibility();
+  renderBalances();
+}
+
+function selectWeekInput(value){
+  if(!value) return;
+  if(value>todayStr()) value = todayStr();
+  const picked = new Date(value);
+  const dowPicked = (picked.getDay()+6)%7;
+  const monday = new Date(picked); monday.setDate(picked.getDate()-dowPicked);
+
+  const now = new Date();
+  const d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const dow = (d.getDay()+6)%7;
+  const curMonday = new Date(d); curMonday.setDate(d.getDate()-dow);
+  const diffWeeks = Math.round((monday-curMonday)/(7*86400000));
+  weekOffset = Math.min(0, diffWeeks);
+  renderBalances();
+}
+
+let monthModalYear = new Date().getFullYear();
+
+function openMonthModal(){
+  const { start } = getPeriodRange('month');
+  monthModalYear = start.getFullYear();
+  populateMonthModalYearSelect();
+  renderMonthModalGrid();
+  document.getElementById('monthModal').classList.add('show');
+}
+function closeMonthModal(){ document.getElementById('monthModal').classList.remove('show'); }
+
+function populateMonthModalYearSelect(){
+  const sel = document.getElementById('monthModalYear');
+  const nowY = new Date().getFullYear();
+  let opts = '';
+  for(let y=nowY; y>=nowY-15; y--){ opts += `<option value="${y}">${y}</option>`; }
+  sel.innerHTML = opts;
+}
+
+function monthModalYearStep(delta){
+  const nowY = new Date().getFullYear();
+  const newY = monthModalYear + delta;
+  if(newY > nowY) return;
+  monthModalYear = newY;
+  renderMonthModalGrid();
+}
+
+function monthModalYearJump(value){
+  monthModalYear = parseInt(value);
+  renderMonthModalGrid();
+}
+
+function renderMonthModalGrid(){
+  const now = new Date();
+  document.getElementById('monthModalYear').value = monthModalYear;
+  document.getElementById('monthModalYearNext').disabled = monthModalYear >= now.getFullYear();
+  const { start: selStart } = getPeriodRange('month');
+  const grid = document.getElementById('monthModalGrid');
+  grid.innerHTML = MONTH_NAMES.map((name, i)=>{
+    const isFuture = monthModalYear===now.getFullYear() && i>now.getMonth();
+    const isSel = monthModalYear===selStart.getFullYear() && i===selStart.getMonth();
+    return `<button ${isFuture?'disabled':''} class="${isSel?'sel':''}" onclick="selectMonthFromGrid(${i})">${name.slice(0,3)}</button>`;
+  }).join('');
+}
+
+function selectMonthFromGrid(monthIndex){
+  const now = new Date();
+  monthOffset = Math.min(0, (monthModalYear-now.getFullYear())*12 + (monthIndex-now.getMonth()));
+  closeMonthModal();
+  renderBalances();
+}
+
+function selectYearInput(value){
+  const yy = parseInt(value);
+  if(!yy) return;
+  yearOffset = Math.min(0, yy-new Date().getFullYear());
+  renderBalances();
+}
+
+function populateYearPicker(){
+  const sel = document.getElementById('yearPicker');
+  const nowY = new Date().getFullYear();
+  let opts = '';
+  for(let y=nowY; y>=nowY-15; y--){ opts += `<option value="${y}">${y}</option>`; }
+  sel.innerHTML = opts;
+}
+
+function dateInRange(dateStr, start, end){
+  const d = new Date(dateStr);
+  if(end) return d>=start && d<end;
+  return d>=start;
+}
+
+function getPeriodRange(period){
+  const now = new Date();
+  if(period==='week'){
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const dow = (d.getDay()+6)%7; // lunes=0
+    d.setDate(d.getDate()-dow+weekOffset*7);
+    const start = d;
+    const end = new Date(d); end.setDate(end.getDate()+7);
+    return { start, end };
+  }
+  if(period==='month'){
+    const start = new Date(now.getFullYear(), now.getMonth()+monthOffset, 1);
+    const end = new Date(now.getFullYear(), now.getMonth()+monthOffset+1, 1);
+    return { start, end };
+  }
+  const start = new Date(now.getFullYear()+yearOffset, 0, 1);
+  const end = new Date(now.getFullYear()+yearOffset+1, 0, 1);
+  return { start, end };
+}
+
+function shiftsKmForDates(datePredicate){
+  return shifts.filter(s=>s.endTs && datePredicate(s.date)).reduce((s,sh)=>s+sh.kmTotal,0);
+}
+
+function shiftsHoursForDates(datePredicate){
+  let ms = 0;
+  shifts.forEach(s=>{
+    if(!datePredicate(s.date)) return;
+    const end = s.endTs || Date.now();
+    ms += (end - s.startTs);
+  });
+  return ms/3600000;
+}
+
+const MONTH_NAMES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+
+function renderBalances(){
+  let pTrips, pExp, pKm, pHours;
+
+  document.getElementById('dayDetailTrips').style.display = currentPeriod==='day' ? 'block' : 'none';
+  document.getElementById('dayDetailExp').style.display = currentPeriod==='day' ? 'block' : 'none';
+
+  if(currentPeriod==='day'){
+    document.getElementById('dayNavLabel').textContent = new Date(selectedDate).toLocaleDateString('es-ES',{weekday:'long', day:'numeric', month:'long'});
+    document.getElementById('dayNextBtn').disabled = selectedDate >= todayStr();
+    document.getElementById('todayResetBtn').style.display = selectedDate===activeDate() ? 'none' : 'block';
+    document.getElementById('dayPicker').value = selectedDate;
+    pTrips = trips.filter(t=>t.date===selectedDate);
+    pExp = expenses.filter(e=>e.date===selectedDate && e.scope!=='mensual');
+    pKm = shiftsKmForDates(d=>d===selectedDate);
+    pHours = shiftsHoursForDates(d=>d===selectedDate);
+
+    const dayTripsAll = trips.filter(t=>t.date===selectedDate).sort((a,b)=>b.ts-a.ts);
+    document.getElementById('dayTripsList').innerHTML = dayTripsAll.length
+      ? dayTripsAll.map(tripItemHTML).join('')
+      : '<div class="empty">Sin carreras ese día</div>';
+    const dayExpAll = expenses.filter(e=>e.date===selectedDate).sort((a,b)=>b.ts-a.ts);
+    document.getElementById('dayExpList').innerHTML = dayExpAll.length
+      ? dayExpAll.map(expItemHTML).join('')
+      : '<div class="empty">Sin gastos ese día</div>';
+  } else {
+    const { start, end } = getPeriodRange(currentPeriod);
+    pTrips = trips.filter(t=>dateInRange(t.date, start, end));
+    const scopeFilter = (currentPeriod==='month' || currentPeriod==='year') ? (()=>true) : (e=>e.scope!=='mensual');
+    pExp = expenses.filter(e=>dateInRange(e.date, start, end) && scopeFilter(e));
+    pKm = shiftsKmForDates(d=>dateInRange(d, start, end));
+    pHours = shiftsHoursForDates(d=>dateInRange(d, start, end));
+
+    const offset = currentOffset();
+    document.getElementById('todayResetBtn').style.display = offset===0 ? 'none' : 'block';
+    document.getElementById('dayNextBtn').disabled = offset>=0;
+
+    if(currentPeriod==='week'){
+      const endLast = new Date(end); endLast.setDate(endLast.getDate()-1);
+      document.getElementById('dayNavLabel').textContent = `${start.getDate()} – ${endLast.getDate()} de ${MONTH_NAMES[endLast.getMonth()]}`;
+      document.getElementById('weekPicker').value = start.toISOString().slice(0,10);
+    } else if(currentPeriod==='month'){
+      const label = `${MONTH_NAMES[start.getMonth()]} ${start.getFullYear()}`;
+      document.getElementById('dayNavLabel').textContent = label;
+      document.getElementById('monthPickerBtn').textContent = 'Elegir mes (' + label + ')';
+    } else {
+      document.getElementById('dayNavLabel').textContent = `${start.getFullYear()}`;
+      document.getElementById('yearPicker').value = start.getFullYear();
+    }
+  }
+
+  const income = pTrips.reduce((s,t)=>s+t.amount,0);
+  const tips = pTrips.reduce((s,t)=>s+t.tip,0);
+  const exp = pExp.reduce((s,e)=>s+e.amount,0);
+  const net = income + tips - exp;
+  const perKm = pKm>0 ? (income+tips)/pKm : 0;
+  const perHour = pHours>0.02 ? (income+tips)/pHours : 0;
+
+  document.getElementById('statIncome').textContent = fmt(income);
+  document.getElementById('statExpense').textContent = fmt(exp);
+  document.getElementById('statTips').textContent = fmt(tips);
+  document.getElementById('statKm').textContent = fmtKm(pKm);
+  document.getElementById('statPerKm').textContent = fmt(perKm);
+  document.getElementById('statHours').textContent = fmtDuration(pHours*3600000);
+  document.getElementById('statPerHour').textContent = fmt(perHour);
+  const netEl = document.getElementById('statNet');
+  netEl.textContent = fmt(net);
+  netEl.className = 'val ' + (net>=0 ? 'pos':'neg');
+
+  if(currentPeriod!=='day'){
+    const { start } = getPeriodRange(currentPeriod);
+    renderBars(pTrips, pExp, start);
+  }
+  renderPayBreakdown(pTrips);
+  renderExpBreakdown(pExp);
+  renderDayHistory();
+}
+
+function renderDayHistory(){
+  const el = document.getElementById('dayHistory');
+  const dates = new Set([...trips.map(t=>t.date), ...expenses.map(e=>e.date), ...shifts.map(s=>s.date)]);
+  const sorted = [...dates].sort((a,b)=>b.localeCompare(a));
+  if(sorted.length===0){ el.innerHTML = '<div class="empty">Todavía no hay días registrados</div>'; return; }
+  const visible = sorted.slice(0, historyVisibleCount);
+  let html = '';
+  let lastMonthKey = null;
+  visible.forEach(date=>{
+    const monthKey = date.slice(0,7);
+    if(monthKey!==lastMonthKey){
+      const [yy,mm] = monthKey.split('-').map(Number);
+      html += `<div class="hist-month-header">${MONTH_NAMES[mm-1]} ${yy}</div>`;
+      lastMonthKey = monthKey;
+    }
+    const dTrips = trips.filter(t=>t.date===date);
+    const dExp = expenses.filter(e=>e.date===date && e.scope!=='mensual');
+    const km = shiftsKmForDates(d=>d===date);
+    const net = dTrips.reduce((s,t)=>s+t.amount+t.tip,0) - dExp.reduce((s,e)=>s+e.amount,0);
+    const label = new Date(date).toLocaleDateString('es-ES',{weekday:'short', day:'numeric', month:'short'});
+    html += `<div class="hist-item" onclick="selectDay('${date}')">
+      <div><div class="hist-date">${label}</div><div class="hist-km">${km>0 ? fmtKm(km) : ''}</div></div>
+      <div class="hist-net" style="color:${net>=0?'var(--green)':'var(--red)'}">${fmt(net)}</div>
+    </div>`;
+  });
+  el.innerHTML = html;
+  const remaining = sorted.length - visible.length;
+  document.getElementById('showMoreHistoryBtn').style.display = remaining>0 ? 'block' : 'none';
+  document.getElementById('showMoreHistoryBtn').textContent = `Mostrar 7 días más (quedan ${remaining})`;
+}
+
+function showMoreHistory(){
+  historyVisibleCount += 7;
+  renderDayHistory();
+}
+
+function renderBars(pTrips, pExp, start){
+  const el = document.getElementById('chartBars');
+  let buckets = [];
+  if(currentPeriod==='week'){
+    for(let i=0;i<7;i++){
+      const d = new Date(start); d.setDate(d.getDate()+i);
+      buckets.push({ key: d.toISOString().slice(0,10), label: d.toLocaleDateString('es-ES',{weekday:'narrow'}) });
+    }
+  } else if(currentPeriod==='month'){
+    const now = new Date();
+    const weeksInMonth = 5;
+    for(let i=0;i<weeksInMonth;i++){
+      const wStart = new Date(start); wStart.setDate(wStart.getDate()+i*7);
+      if(wStart.getMonth()!==start.getMonth()) break;
+      buckets.push({ start: new Date(wStart), end: new Date(wStart.getFullYear(),wStart.getMonth(),wStart.getDate()+7), label: 'S'+(i+1) });
+    }
+  } else {
+    for(let i=0;i<12;i++){
+      buckets.push({ month: i, label: new Date(2000,i,1).toLocaleDateString('es-ES',{month:'narrow'}) });
+    }
+  }
+
+  const vals = buckets.map(b=>{
+    let inc=0, tp=0, ex=0;
+    if(currentPeriod==='week'){
+      pTrips.forEach(t=>{ if(t.date===b.key){ inc+=t.amount; tp+=t.tip; }});
+      pExp.forEach(e=>{ if(e.date===b.key){ ex+=e.amount; }});
+    } else if(currentPeriod==='month'){
+      pTrips.forEach(t=>{ const d=new Date(t.date); if(d>=b.start && d<b.end){ inc+=t.amount; tp+=t.tip; }});
+      pExp.forEach(e=>{ const d=new Date(e.date); if(d>=b.start && d<b.end){ ex+=e.amount; }});
+    } else {
+      pTrips.forEach(t=>{ if(new Date(t.date).getMonth()===b.month){ inc+=t.amount; tp+=t.tip; }});
+      pExp.forEach(e=>{ if(new Date(e.date).getMonth()===b.month){ ex+=e.amount; }});
+    }
+    return { label: b.label, net: inc+tp-ex };
+  });
+
+  const maxAbs = Math.max(1, ...vals.map(v=>Math.abs(v.net)));
+  el.innerHTML = vals.map(v=>{
+    const h = Math.max(2, Math.round((Math.abs(v.net)/maxAbs)*90));
+    const color = v.net>=0 ? 'var(--green)' : 'var(--red)';
+    return `<div class="bar-col"><div class="bar" style="height:${h}px;background:${color};"></div><div class="bar-lbl">${v.label}</div></div>`;
+  }).join('');
+}
+
+function renderPayBreakdown(pTrips){
+  const el = document.getElementById('payBreakdown');
+  const totals = { efectivo:0, tarjeta:0, app:0 };
+  pTrips.forEach(t=>{ totals[t.pay] = (totals[t.pay]||0) + t.amount; });
+  const sum = Object.values(totals).reduce((a,b)=>a+b,0) || 1;
+  el.innerHTML = Object.keys(totals).map(k=>{
+    const pct = Math.round((totals[k]/sum)*100);
+    return `<div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;"><span>${PAY_LABELS[k]}</span><span style="font-family:var(--mono);">${fmt(totals[k])} · ${pct}%</span></div>
+      <div style="background:var(--surface-2);border-radius:6px;height:6px;overflow:hidden;"><div style="width:${pct}%;height:100%;background:var(--yellow);"></div></div>
+    </div>`;
+  }).join('');
+}
+
+function renderExpBreakdown(pExp){
+  const el = document.getElementById('expBreakdown');
+  if(pExp.length===0){ el.innerHTML = '<div class="empty">Sin gastos en este periodo</div>'; return; }
+  const totals = {};
+  pExp.forEach(e=>{ totals[e.category] = (totals[e.category]||0)+e.amount; });
+  const sum = Object.values(totals).reduce((a,b)=>a+b,0) || 1;
+  const sorted = Object.entries(totals).sort((a,b)=>b[1]-a[1]);
+  el.innerHTML = sorted.map(([k,v])=>{
+    const pct = Math.round((v/sum)*100);
+    return `<div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;"><span>${CAT_LABELS[k]}</span><span style="font-family:var(--mono);">${fmt(v)} · ${pct}%</span></div>
+      <div style="background:var(--surface-2);border-radius:6px;height:6px;overflow:hidden;"><div style="width:${pct}%;height:100%;background:var(--red);"></div></div>
+    </div>`;
+  }).join('');
+}
+
+function getPeriodData(){
+  let pTrips, pExp, pExpForBalance, pShifts, label;
+  if(currentPeriod==='day'){
+    pTrips = trips.filter(t=>t.date===selectedDate);
+    pExp = expenses.filter(e=>e.date===selectedDate);
+    pExpForBalance = pExp.filter(e=>e.scope!=='mensual');
+    pShifts = shifts.filter(s=>s.date===selectedDate);
+    label = selectedDate;
+  } else {
+    const { start, end } = getPeriodRange(currentPeriod);
+    pTrips = trips.filter(t=>dateInRange(t.date, start, end));
+    pExp = expenses.filter(e=>dateInRange(e.date, start, end));
+    pExpForBalance = (currentPeriod==='month' || currentPeriod==='year') ? pExp : pExp.filter(e=>e.scope!=='mensual');
+    pShifts = shifts.filter(s=>dateInRange(s.date, start, end));
+    const labels = { week:'semana', month:'mes', year:'año' };
+    const endLast = new Date(end); endLast.setDate(endLast.getDate()-1);
+    label = labels[currentPeriod] + '_' + start.toISOString().slice(0,10);
+  }
+  return { pTrips, pExp, pExpForBalance, pShifts, label };
+}
+
+function exportExcel(){
+  if(typeof XLSX === 'undefined'){ showToast('No se pudo cargar el exportador'); return; }
+  const { pTrips, pExp, pExpForBalance, pShifts, label } = getPeriodData();
+  if(pTrips.length===0 && pExp.length===0 && pShifts.length===0){ showToast('No hay datos en este periodo'); return; }
+
+  const tripsRows = pTrips.sort((a,b)=>a.ts-b.ts).map(t=>({
+    Fecha: t.date, Importe: t.amount, Propina: t.tip, Total: Math.round((t.amount+t.tip)*100)/100,
+    'Forma de pago': PAY_LABELS[t.pay], Nota: t.note||''
+  }));
+  const expRows = pExp.sort((a,b)=>a.ts-b.ts).map(e=>({
+    Fecha: e.date, Categoría: CAT_LABELS[e.category], Tipo: e.scope==='mensual' ? 'Mensual' : 'Diario', Importe: e.amount, Nota: e.note||''
+  }));
+  const shiftRows = pShifts.filter(s=>s.endTs).map(s=>({
+    Fecha: s.date,
+    'Hora inicio': new Date(s.startTs).toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}),
+    'Hora fin': new Date(s.endTs).toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}),
+    'Km inicio': s.kmStart, 'Km fin': s.kmEnd, 'Km recorridos': s.kmTotal
+  }));
+
+  const income = pTrips.reduce((s,t)=>s+t.amount,0);
+  const tips = pTrips.reduce((s,t)=>s+t.tip,0);
+  const exp = pExpForBalance.reduce((s,e)=>s+e.amount,0);
+  const expMensualExcluidos = currentPeriod==='day' ? pExp.filter(e=>e.scope==='mensual').reduce((s,e)=>s+e.amount,0) : 0;
+  const km = pShifts.filter(s=>s.endTs).reduce((s,sh)=>s+sh.kmTotal,0);
+  const resumenRows = [
+    { Concepto:'Ingresos carreras', Valor: income },
+    { Concepto:'Propinas', Valor: tips },
+    { Concepto:'Gastos (aplicados a este balance)', Valor: exp },
+    { Concepto:'Neto', Valor: Math.round((income+tips-exp)*100)/100 },
+  ];
+  if(currentPeriod==='day' && expMensualExcluidos>0){
+    resumenRows.push({ Concepto:'Gastos mensuales de hoy (no incluidos en este neto)', Valor: expMensualExcluidos });
+  }
+  resumenRows.push(
+    { Concepto:'Km recorridos', Valor: km },
+    { Concepto:'€ por km', Valor: km>0 ? Math.round(((income+tips)/km)*100)/100 : 0 },
+    { Concepto:'Nº carreras', Valor: pTrips.length },
+    { Concepto:'Perfil', Valor: profile.type==='dueno' ? 'Dueño de licencia' : 'Asalariado' }
+  );
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(resumenRows), 'Resumen');
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(tripsRows.length?tripsRows:[{Fecha:'',Importe:'',Propina:'',Total:'','Forma de pago':'',Nota:''}]), 'Carreras');
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(expRows.length?expRows:[{Fecha:'',Categoría:'',Tipo:'',Importe:'',Nota:''}]), 'Gastos');
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(shiftRows.length?shiftRows:[{Fecha:'','Hora inicio':'','Hora fin':'','Km inicio':'','Km fin':'','Km recorridos':''}]), 'Turnos');
+
+  XLSX.writeFile(wb, `taxicuentas_${label}.xlsx`);
+  showToast('Excel exportado');
+}
+
+function openSettings(){ document.getElementById('settingsModal').classList.add('show'); }
+function closeSettings(){ document.getElementById('settingsModal').classList.remove('show'); }
+
+function applyProfileUI(){
+  document.getElementById('btnDueno').classList.toggle('sel', profile.type==='dueno');
+  document.getElementById('btnAsalariado').classList.toggle('sel', profile.type==='asalariado');
+  document.getElementById('profilePill').textContent = profile.type==='dueno' ? 'DUEÑO' : 'ASALARIADO';
+  document.getElementById('salaryFields').style.display = profile.type==='asalariado' ? 'block' : 'none';
+  document.getElementById('salaryPct').value = profile.salaryPct || 40;
+  const hint = document.getElementById('settingsHint');
+  hint.textContent = profile.type==='dueno'
+    ? 'Como dueño, el balance neto es tu beneficio real del negocio (ingresos + propinas − todos los gastos).'
+    : 'Como asalariado, sigue apuntando tus carreras y gastos para llevar tu propio control y comparar con lo que te liquida la empresa.';
+}
+
+async function setProfile(type){
+  profile.type = type;
+  applyProfileUI();
+  await saveProfile();
+}
+
+document.getElementById('salaryPct').addEventListener('change', async (e)=>{
+  profile.salaryPct = parseFloat(e.target.value) || 0;
+  await saveProfile();
+});
+
+loadData();
+setInterval(updateShiftElapsed, 1000);
+</script>
+</body>
+</html>
